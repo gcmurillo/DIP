@@ -40,12 +40,16 @@ while(True):
     img_back = cv2.idft(f_ishift)
     img_back = cv2.magnitude(img_back[:,:,0],img_back[:,:,1])
 
+    magnitude_spectrum = 20*np.log(cv2.magnitude(dft_shift[:,:,0],dft_shift[:,:,1]))    #encuentra la magnitud, usa mapeo logaritmico y absoluto de la imagen real e imaginaria
+
     print('Img height:', img.shape[0])
     print('Img width:', img.shape[1])
 
-    plt.subplot(121),plt.imshow(img, cmap = 'gray')
+    plt.subplot(1,3,1),plt.imshow(img, cmap = 'gray')
     plt.title('Input Image'), plt.xticks([]), plt.yticks([])
-    plt.subplot(122),plt.imshow(img_back, cmap = 'gray')
+    plt.subplot(1,3,2),plt.imshow(magnitude_spectrum, cmap = 'gray')
     plt.title('Magnitude Spectrum'), plt.xticks([]), plt.yticks([])
+    plt.subplot(1,3,3),plt.imshow(img_back, cmap = 'gray')
+    plt.title('Back'), plt.xticks([]), plt.yticks([])
     plt.show()   
     
