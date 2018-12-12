@@ -76,9 +76,10 @@ while(True):
     img_back = cv2.magnitude(img_back[:,:,0],img_back[:,:,1])
 
     product = 20*np.log(cv2.magnitude(dft_shift[:,:,0],dft_shift[:,:,1])) 
+    product[np.isneginf(product)] = 0  # cambiando -inf por 0
 
-    # product = cv2.bitwise_not(product[:,:,0], product[:,:,1])
-
+    print(product[0:img.shape[0], right:right+10])
+    
     plt.subplot(1,5,1),plt.imshow(img, cmap = 'gray')
     plt.title('Input Image'), plt.xticks([]), plt.yticks([])
 

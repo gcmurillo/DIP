@@ -14,14 +14,6 @@ for i in range(0, len(nombres)):
     fshift = np.fft.fftshift(f)
     
     magnitude_spectrum = 20*np.log(np.abs(fshift))
-    '''
-    img_float32 = np.float32(img)       #mapea imagen de entrada a 32 bits/pixel
-
-    dft = cv2.dft(img_float32, flags = cv2.DFT_COMPLEX_OUTPUT)    #calcula la transf. Fourier 
-    dft_shift = np.fft.fftshift(dft)    #proyecta los cuadrantes de la imagen 
-
-    magnitude_spectrum = 20*np.log(cv2.magnitude(dft_shift[:,:,0],dft_shift[:,:,1]))    #encuentra la magnitud, usa mapeo logaritmico y absoluto de la imagen real e imaginaria
-    '''
 
     plt.subplot(1,2,1),plt.imshow(img, cmap = 'gray')
     plt.title(nombres[i]), plt.xticks([]), plt.yticks([])
