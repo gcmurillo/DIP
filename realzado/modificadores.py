@@ -37,7 +37,7 @@ def alargamiento(image_path):
     plt.show()
 
 
-#alargamiento('bajo.jpg')
+alargamiento('bajo.jpg')
 
 def compresion(image_path, shirnk_max, shrink_min):
     img = cv2.imread(image_path, 0)  # obtener juego en escala de grises
@@ -72,7 +72,7 @@ def compresion(image_path, shirnk_max, shrink_min):
 
     plt.show()
 
-#compresion('bajo.jpg', 50, 100)
+compresion('bajo.jpg', 50, 100)
 
 def desplazamiento(image_path, offset):
 
@@ -103,13 +103,4 @@ def desplazamiento(image_path, offset):
 
     plt.show()
 
-#desplazamiento('bajo.jpg', 50)
-
-def ecualizar(image_path):
-
-    img = cv2.imread(image_path, 0)  # obtener juego en escala de grises
-    hist = img.flatten()
-
-    cdf = hist.cumsum()
-
-ecualizar('posa.jpg')
+desplazamiento('bajo.jpg', 50)
